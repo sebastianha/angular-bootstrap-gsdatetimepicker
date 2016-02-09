@@ -1,0 +1,38 @@
+{
+  "name": "angular-bootstrap-gsdatetimepicker",
+  "version": "0.1.0",
+  "authors": [
+    "Sebastian Hammerl, Getslash GmbH"
+  ],
+  "description": "A wrapper around the bootstrap-datetimepicker",
+  "main": [
+    "angular-bootstrap-gsdatetimepicker.js"
+  ],
+  "keywords": [
+    "angular",
+    "angularjs",
+    "directive",
+    "ui",
+    "bootstrap",
+    "form",
+    "input",
+    "reset",
+    "date",
+    "datetime",
+    "datetimepicker",
+    "picker"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "angular": ">= 1.2.0",
+    "bootstrap": ">= 3.0.0",
+    "moment": "2.11.2",
+    "moment-timezone": "0.5.0",
+    "eonasdan-bootstrap-datetimepicker" : "4.17.37"
+  }
+}
