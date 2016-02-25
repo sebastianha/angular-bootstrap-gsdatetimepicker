@@ -1,8 +1,6 @@
 "use strict";
 
-angular.module("ui.gsdatetimepicker", []).directive("gsdatetimepicker", [
-	"$timeout",
-	function($timeout) {
+angular.module("ui.gsdatetimepicker", []).directive("gsdatetimepicker", [function() {
 		return {
 			require : "?ngModel",
 			restrict: "A",
@@ -20,11 +18,11 @@ angular.module("ui.gsdatetimepicker", []).directive("gsdatetimepicker", [
 
 				$element.on("dp.error",  function() {
 					if(ngModelCtrl) {
-						var date = Date.parse(ngModelCtrl.$viewValue);
-						if(isNaN(date)) {
-							ngModelCtrl.$setViewValue($element.data("DateTimePicker").date());
+						var date = moment(ngModelCtrl.$viewValue, options.format);
+						if(date.isValid() === true) {
+							$element.data("DateTimePicker").date(date);
 						} else {
-							$element.data("DateTimePicker").date(new Date(date));
+							ngModelCtrl.$setViewValue($element.data("DateTimePicker").date());
 						}
 
 					}
@@ -41,7 +39,7 @@ angular.module("ui.gsdatetimepicker", []).directive("gsdatetimepicker", [
 						if(date === null) {
 							$element.data("DateTimePicker").date(null);
 						} else {
-							$element.data("DateTimePicker").date(new Date(date));
+							$element.data("DateTimePicker").date(moment(date));
 						}
 					};
 				}
