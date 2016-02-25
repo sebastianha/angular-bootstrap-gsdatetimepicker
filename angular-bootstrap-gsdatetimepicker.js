@@ -42,6 +42,8 @@ angular.module("ui.gsdatetimepicker", []).directive("gsdatetimepicker", [functio
 						} else {
 							if(date.length === 5 && date.split(":").length === 2) {
 								$element.data("DateTimePicker").date(moment(date, "HH:mm"));
+							} else if(date.length === 8 && date.split(":").length === 3) {
+								$element.data("DateTimePicker").date(moment(date, "HH:mm:ss"));
 							} else {
 								$element.data("DateTimePicker").date(moment(date));
 							}
