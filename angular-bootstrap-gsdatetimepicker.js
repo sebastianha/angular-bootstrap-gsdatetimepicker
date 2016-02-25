@@ -9,6 +9,7 @@ angular.module("ui.gsdatetimepicker", []).directive("gsdatetimepicker", [functio
 			},
 			link    : function($scope, $element, $attrs, ngModelCtrl) {
 				var options = $scope.$eval($attrs.options);
+				options.timeZone = moment.tz.guess();
 
 				$element.on("dp.change", function() {
 					if(ngModelCtrl) {
